@@ -1,6 +1,8 @@
 package com.msoft.core.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,5 +34,19 @@ public class DataController {
     System.out.println("parameter | name: " + name + " ,age: " + age);
 
     return "hello_form_display";
+  }
+
+  @RequestMapping(value = "/process-model", method = RequestMethod.GET)
+  public String processModel(HttpServletRequest request, Model model){
+
+    String name = request.getParameter("name") + ", Yo!!";
+    String age  = request.getParameter("age");
+    String message = "Welcome " + name + "_" + age + ";";
+
+    model.addAttribute("name", name);
+    model.addAttribute("age", age);
+    model.addAttribute("message", message);
+
+    return "hello_model_display";
   }
 }

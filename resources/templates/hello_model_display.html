@@ -5,16 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page Hello</title>
+    <title>Info User</title>
 </head>
 <body>
 
-<form action="process-model" method="GET">
-    <input type="text" name="name" placeholder="What's your name"/> <br>
+<div>Information of User (From Model/HttpServletRequest)</div> <br>
 
-    <input type="number" name="age" placeholder="your age">
+<div style="display: inline-flex;">Name: <div th:text="${name}"></div></div> <br>
 
-    <input type="submit">
-</form>
+<div style="display: inline-flex;">Age: <div th:text="${age}"></div></div> <br>
+
+<div th:text="${message}"></div>
+
 </body>
 </html>
