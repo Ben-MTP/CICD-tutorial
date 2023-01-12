@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-  @RequestMapping("/")
+  @RequestMapping("/home")
   public String getIndex(){
     return "CICD Tutorial Step by Step";
   }
