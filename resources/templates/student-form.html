@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Form</title>
+</head>
+<body>
+
+<h1>Student Form Information</h1>
+
+<!-- th:object="${student}"-->
+<form action="/student/confirm" method="GET">
+  <input type="text" name="firstName" placeholder="First Name"/> <br><br>
+
+  <input type="text" name="lastName" placeholder="Last Name"> <br><br>
+
+  <select class="form-control" id="country" th:field="*{student}" name="country">
+    <option value="0">--select option--</option>
+    <option th:each="entry : ${student.getCountryOptions().entrySet()}"
+            th:value="${entry.key}"
+            th:text="${entry.value}">
+    </option>
+  </select>
+
+  <br><br>
+
+  <input type="submit">
+</form>
+</body>
+</html>
