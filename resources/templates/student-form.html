@@ -11,13 +11,12 @@
 
 <h1>Student Form Information</h1>
 
-<!-- th:object="${student}"-->
-<form action="/student/confirm" method="GET">
+<form action="/student/confirm" method="POST">
   <input type="text" name="firstName" placeholder="First Name"/> <br><br>
 
   <input type="text" name="lastName" placeholder="Last Name"> <br><br>
 
-  <select class="form-control" id="country" th:field="*{student}" name="country">
+  <select class="form-control select2bs4" id="country" name="country">
     <option value="0">--select option--</option>
     <option th:each="entry : ${student.getCountryOptions().entrySet()}"
             th:value="${entry.key}"
