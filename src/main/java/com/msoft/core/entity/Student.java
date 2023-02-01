@@ -42,7 +42,9 @@ public class Student {
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        // Chỉnh sửa lại việc khi truyền một CODE country vào thì trả về một NAME country
+        this.country = countryOptions.get(country);
+        System.out.println("    country selected: " + this.country);
     }
 
     public LinkedHashMap<String, String> getCountryOptions() {
