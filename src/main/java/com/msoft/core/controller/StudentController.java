@@ -31,7 +31,10 @@ public class StudentController {
 
     @RequestMapping(value = "/confirm", method = RequestMethod.POST)
     public String studentConfirmation(@ModelAttribute("student") Student student, ModelMap modelMap){
-        System.out.println("The Student | firstName: " + student.getFirstName() + " , lastName: " + student.getLastName() + " , country: " + student.getCountry());
+        System.out.println("The Student | firstName: " + student.getFirstName()
+                + " , lastName: " + student.getLastName()
+                + " , country: " + student.getCountry()
+                + " , favoriteLanguage: " + student.getFavoriteLanguage());
         modelMap.addAttribute("student", student);
 
         return "student-confirmation";
