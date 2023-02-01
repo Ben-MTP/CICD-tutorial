@@ -13,6 +13,7 @@ public class Student {
     private String country;
     private LinkedHashMap<String, String> countryOptions;
     private String favoriteLanguage;
+    private String[] operatingSystem;
 
     public Student(){
         countryOptions = new LinkedHashMap<>();
@@ -62,5 +63,28 @@ public class Student {
 
     public void setFavoriteLanguage(String favoriteLanguage) {
         this.favoriteLanguage = favoriteLanguage;
+    }
+
+    /**
+     * getOperatingSystem
+     * Chuyển đổi danh sách String OperatingSystem thành một String phân biệt trong ký tự đặc biệt
+     * Đồng thời loại bỏ kí tự cuối cùng cho ra format đẹp hơn
+     * @return
+     */
+    public String getOperatingSystem() {
+        StringBuilder resultOperatingSystem = new StringBuilder();
+        for (String item: operatingSystem) {
+            resultOperatingSystem.append(item).append(",");
+        }
+        if(resultOperatingSystem.length() > 1){
+            int lastIndex = resultOperatingSystem.length() - 1;
+            resultOperatingSystem.deleteCharAt(lastIndex);
+        }
+
+        return resultOperatingSystem.toString();
+    }
+
+    public void setOperatingSystem(String[] operatingSystem) {
+        this.operatingSystem = operatingSystem;
     }
 }
