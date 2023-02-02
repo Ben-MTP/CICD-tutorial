@@ -65,13 +65,17 @@ public class Student {
         this.favoriteLanguage = favoriteLanguage;
     }
 
+    public String[] getOperatingSystem() {
+        return operatingSystem;
+    }
+
     /**
      * getOperatingSystem
      * Chuyển đổi danh sách String OperatingSystem thành một String phân biệt trong ký tự đặc biệt
      * Đồng thời loại bỏ kí tự cuối cùng cho ra format đẹp hơn
      * @return
      */
-    public String getOperatingSystem() {
+    public String getOperatingSystemData() {
         StringBuilder resultOperatingSystem = new StringBuilder();
         for (String item: operatingSystem) {
             resultOperatingSystem.append(item).append(",");

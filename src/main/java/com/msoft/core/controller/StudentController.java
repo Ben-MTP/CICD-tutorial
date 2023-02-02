@@ -35,7 +35,7 @@ public class StudentController {
                 + " , lastName: " + student.getLastName()
                 + " , country: " + student.getCountry()
                 + " , favoriteLanguage: " + student.getFavoriteLanguage()
-                + " , OperatingSystem: " + student.getOperatingSystem());
+                + " , OperatingSystem: " + student.getOperatingSystemData());
         modelMap.addAttribute("student", student);
 
         return "student-confirmation";

@@ -11,11 +11,17 @@
 
 <div>Information of Student</div> <br>
 
-<div style="display: inline-flex;">FirstName: <div th:text="${student.firstName}"></div></div> <br>
-<div style="display: inline-flex;">LastName: <div th:text="${student.lastName}"></div></div> <br>
-<div style="display: inline-flex;">Country: <div th:text="${student.country}"></div></div> <br>
-<div style="display: inline-flex;">Favorite Language: <div th:text="${student.favoriteLanguage}"></div></div> <br>
-<div style="display: inline-flex;">Operating System: <div th:text="${student.getOperatingSystem()}"></div></div> <br>
+<div style="display: inline-flex;">FirstName: <div th:text="${student.firstName}"></div></div> <br><br>
+<div style="display: inline-flex;">LastName: <div th:text="${student.lastName}"></div></div> <br><br>
+<div style="display: inline-flex;">Country: <div th:text="${student.country}"></div></div> <br><br>
+<div style="display: inline-flex;">Favorite Language: <div th:text="${student.favoriteLanguage}"></div></div> <br><br>
+<div style="display: inline-flex;">Operating System (String): <div th:text="${student.getOperatingSystemData()}"></div></div> <br><br>
+<div style="display: inline-flex;">Operating System (DataRow):
+  <ul th:each="operatingSystem : ${student.getOperatingSystem()}">
+    <li th:text="${operatingSystem}">...</li>
+  </ul>
+</div>
+<br><br>
 
 </body>
 </html>
